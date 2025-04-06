@@ -30,7 +30,7 @@ const RoleSelection = () => {
             fullWidth
             endIcon={<ArrowForwardIcon />}
             className="!rounded-xl !py-3 !text-black hover:!bg-gray-100"
-            onClick={() => handleRoleClick('Admin')}
+            onClick={() => handleRoleClick('admin')}
           >
             Login as Admin
           </Button>
@@ -40,7 +40,7 @@ const RoleSelection = () => {
             fullWidth
             endIcon={<ArrowForwardIcon />}
             className="!rounded-xl !py-3 !text-black hover:!bg-gray-100 mt-3 "
-            onClick={() => handleRoleClick('Telecaller')}
+            onClick={() => handleRoleClick('telecaller')}
           >
             Login as TeleCaller
           </Button>

@@ -47,15 +47,14 @@ const Login = () => {
         if (!signup) {
           const response = await axios.post(BASE_URL + "/login", { emailId, password, role }, { withCredentials: true });
           toast.success("login successful");
-          console.log(response);
           dispatch(addUser(response.data));
 
 
           if (response.status === 200) {
-            if (role === 'Admin') {
+            if (role === 'admin') {
               navigate("/admin");
             }
-            if (role === 'Telecaller') {
+            if (role === 'telecaller') {
               navigate("/telecaller");
             }
             setEmailId("");
