@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import RoleSelection from '../RoleSelection';
-import Login from '../Login';
+import RoleSelection from '../Authentication/RoleSelection';
+import Login from '../Authentication/Login';
 import Telecaller from '../telecaller/TeleCallerPage';
 import Admin from "../admin/Admin";
+
 
 
 const AppRoute = () => {
@@ -14,6 +15,7 @@ const AppRoute = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/telecaller" element={<Telecaller />} />
         <Route path="/admin" element={<Admin />} />
+
 
       </Routes>
 

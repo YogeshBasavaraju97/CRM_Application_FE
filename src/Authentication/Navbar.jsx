@@ -10,11 +10,15 @@ import {
   Box
 } from '@mui/material';
 import { deepPurple } from '@mui/material/colors';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  const user = useSelector((store) => store.user);
+
+
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -37,11 +41,11 @@ const Navbar = () => {
       <Toolbar className="flex justify-between px-4">
         {/* Logo or Title */}
         <Typography variant="h6" className="text-gray-800 font-bold">
-          CRM
+          {user && user.name.slice(0, 1)}
         </Typography>
 
         {/* Avatar & Dropdown */}
-        {isUserLoggedIn && <Box>
+        {user && <Box>
           <IconButton onClick={handleMenuOpen} size="small">
             <Avatar sx={{ bgcolor: deepPurple[500], width: 40, height: 40 }}>
               YB

@@ -8,9 +8,7 @@ const RoleSelection = () => {
   const navigate = useNavigate();
 
   const handleRoleClick = (role) => {
-    console.log(`Logging in as ${role}`);
     navigate("/login", { state: { role: `${role}` } });
-
   };
 
   return (
@@ -42,7 +40,7 @@ const RoleSelection = () => {
             fullWidth
             endIcon={<ArrowForwardIcon />}
             className="!rounded-xl !py-3 !text-black hover:!bg-gray-100 mt-3 "
-            onClick={() => handleRoleClick('TeleCaller')}
+            onClick={() => handleRoleClick('Telecaller')}
           >
             Login as TeleCaller
           </Button>
