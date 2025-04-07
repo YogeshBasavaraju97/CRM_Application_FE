@@ -4,11 +4,6 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { useEffect, useState } from 'react';
 import useKeyMetrics from './adminHooks/useKeyMetrics';
 import useCallRecords from './adminHooks/useCallRecords';
-const IntialCalls = [
-  { name: 'Mark Johnson', date: '2025-04-01', time: '10:00 AM', telecaller: 'Tom', status: 'Discussed' },
-  { name: 'Mark Brown', date: '2025-04-02', time: '02:30 PM', telecaller: 'Sara', status: 'Callback' },
-  { name: 'Rachel Green', date: '2025-04-03', time: '04:00 PM', telecaller: 'John', status: 'Interested' },
-];
 
 const Dashboard = () => {
 
@@ -24,11 +19,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     setKeyMetrics(data);
-
     setConnectedCallRecords(callData);
-
   }, [data, callData]);
-  console.log("call", connectedCallRecords);
+
   const recentActivities = [
     { id: 1, activity: 'Call made to John Doe' },
     { id: 2, activity: 'New lead added: Jane Smith' },
